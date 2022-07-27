@@ -7,7 +7,7 @@
 ```
 sudo apt install python3-pip
 ```
-2. Uninstall gunicorn
+2. Uninstall gunicorn (avoid mismatch version)
 * Check if gunicorn have been installed
 ```
 pip3 list | grep gunicord
