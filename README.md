@@ -1,6 +1,6 @@
-# Getting Started With Apache Airflow on Ubunutu Server
+# Install Apache Airflow Standalone Ubuntu 
 ## Environment
-* Ubuntu server 18.04.2 LTS (172.17.80.26)
+* Ubuntu server 18.04.2 LTS (manhnk9@172.17.80.26, password: 1)
 * Python 3.6.9
 
 1. Install pip3
@@ -21,7 +21,7 @@ pip3 uninstall gunicorn
 sudo pip3 install apache-airflow
 ```
 4. Set up Airflow as a systemd service
-* airflow-webserver.service
+* airflow-webserver.service (default port: 8080)
 ```
 sudo vi /etc/systemd/system/airflow-webserver.service
 ```
@@ -77,5 +77,15 @@ systemctl start airflow-webserver
 Every time you make any changes airflow-scheduler.service file
 ```
 systemctl daemon-reload
+```
+
+## Add admin user
+```
+airflow users create \
+    --username admin \
+    --firstname Peter \
+    --lastname Parker \
+    --role Admin \
+    --email spiderman@superhero.org
 ```
 
